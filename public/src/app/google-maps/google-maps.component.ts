@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-google-maps',
@@ -11,14 +12,14 @@ export class GoogleMapsComponent implements OnInit {
   lng:number;
   zoom: number;
 
-  constructor() { }
+  constructor(private _routes: Router, private _route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getLocation()
   }
 
   getLocation() {
-    navigator.geolocation.getCurrentPosition((position)=> {
+  		navigator.geolocation.getCurrentPosition((position)=> {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
         this.zoom = 14;
@@ -27,6 +28,6 @@ export class GoogleMapsComponent implements OnInit {
     })
 
   }
-
+	
 
 }
