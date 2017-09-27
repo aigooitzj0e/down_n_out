@@ -1,7 +1,22 @@
+#title {
+  font-size: 4em;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: lighter;
+  letter-spacing: 8px;
+  text-align: center;
+  margin: 30px 0px;
+  text-shadow: 5px 5px 5px grey;
+}
+
+#map_container {
+  width: 90%;
+  height: 700px;
+  margin: 0 auto;
+  /*border: 1px solid black;*/
+  box-shadow: 15px 15px 15px gray;
+}
 
 agm-map {
-  height: 900px;
-  width: 90%;
-  display: block;
-  margin: 0 auto;
+  height: 100%;
+  width: 100%;
 }
