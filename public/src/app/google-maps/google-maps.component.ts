@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GoogleService } from './../google.service';
 
 @Component({
   selector: 'app-google-maps',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoogleMapsComponent implements OnInit {
 
+  // MAP OPTIONS
   lat:number;
   lng:number;
   zoom: number;
+  map:string;
+  radius:number = 2000;
+  color:string = 'rgb(116, 156, 189)';
+
+  // SEARCH
+  newSearch: object = {
+    category: "",
+    location: ""
+  }
+
 
   constructor() { }
 
@@ -25,8 +37,13 @@ export class GoogleMapsComponent implements OnInit {
         console.log("latitude: " + this.lat);
         console.log("longitude: " + this.lng);
     })
+  }
+
+  onSearch() {
+    console.log('onSearch()', this.newSearch);
 
   }
+
 
 
 }
