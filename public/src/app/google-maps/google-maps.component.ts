@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GoogleService } from './../google.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-google-maps',
@@ -25,7 +26,9 @@ export class GoogleMapsComponent implements OnInit {
   //YELP DATA
   yList:object[] = [];
 
-  constructor(private _googleService: GoogleService) { }
+
+  constructor(private _routes: Router, private _route: ActivatedRoute, private _googleService: GoogleService) { }
+
 
   ngOnInit() {
     this.getLocation();
@@ -33,7 +36,7 @@ export class GoogleMapsComponent implements OnInit {
 
   //GEOLOCATION
   getLocation() {
-    navigator.geolocation.getCurrentPosition((position)=> {
+  		navigator.geolocation.getCurrentPosition((position)=> {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
         this.zoom = 14;
@@ -56,7 +59,7 @@ export class GoogleMapsComponent implements OnInit {
 
     })
   }
-
+	
 
 
 }
