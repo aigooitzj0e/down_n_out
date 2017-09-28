@@ -5,8 +5,8 @@ import { GoogleMapsComponent } from './google-maps/google-maps.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'front', pathMatch: 'full'},
-	{path: 'front', pathMatch:'full', component: FrontpageComponent},
-	{path: 'map', pathMatch:'full', component: GoogleMapsComponent},
+	{path: 'front', pathMatch:'full', component: FrontpageComponent, data: { animation: 'front'}},
+	{path: 'map', pathMatch:'full', component: GoogleMapsComponent, data: { animation: 'map'}},
 
 	{path: '**', redirectTo:'front'}
 ];

@@ -1,7 +1,7 @@
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
-<!-- <p id="title">DOWN - N - OUT</p> -->
-
+<div class="button">
+	<button class="box" type="button" name="button"><a [routerLink]="['front']">HOME</a></button>
+</div>
 <div id="map_container">
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
