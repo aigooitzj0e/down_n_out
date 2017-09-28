@@ -1,9 +1,37 @@
+<<<<<<< HEAD
 
 <div class="button">
 	<button class="box" type="button" name="button"><a [routerLink]="['front']">HOME</a></button>
 </div>
 <div id="map_container">
+=======
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxAh9XAJJr_qDteIBpJt50ODd1Ojw0qIo&libraries=places"></script>
+
+
+<!-- <p id="title">DOWN - N - OUT</p> -->
+
+<div id="map">
+>>>>>>> 5941a5e631e3927af4c7c14d13d133fefd9f9a5a
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="color"></agm-circle>
   </agm-map>
 </div>
+
+<form (submit)="onSearch()">
+  <!-- <select name="category" [(ngModel)]="newSearch.category" #category="ngModel">
+    <option value="food">Food</option>
+    <option value="park">Park</option>
+    <option value="bar">Bar</option>
+    <option value="entertainment">Entertainment</option>
+  </select> -->
+  <input type="text" name="category" [(ngModel)]="newSearch.category" #category="ngModel">
+  <input type="text" name="location" placeholder="Location" [(ngModel)]="newSearch.location" #location="ngModel">
+  <input type="submit" value="Find Something To Do">
+</form>
+
+{{ newSearch | json }}
+<p>Name: {{ yelpp.name }}</p>
+<p>Latitude: {{ yelpp.lat }}</p>
+<p>Longitude: {{ yelpp.lng }}</p>
