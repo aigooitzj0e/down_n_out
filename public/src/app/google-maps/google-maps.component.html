@@ -12,18 +12,11 @@
 </div>
 
 <form (submit)="onSearch()">
-  <!-- <select name="category" [(ngModel)]="newSearch.category" #category="ngModel">
-    <option value="food">Food</option>
-    <option value="park">Park</option>
-    <option value="bar">Bar</option>
-    <option value="entertainment">Entertainment</option>
-  </select> -->
   <input type="text" name="category" [(ngModel)]="newSearch.category" #category="ngModel">
   <input type="text" name="location" placeholder="Location" [(ngModel)]="newSearch.location" #location="ngModel">
   <input type="submit" value="Find Something To Do">
 </form>
 
-{{ newSearch | json }}
-<p>Name: {{ yelpp.name }}</p>
-<p>Latitude: {{ yelpp.lat }}</p>
-<p>Longitude: {{ yelpp.lng }}</p>
+<div *ngFor="let place of yList">
+  <p>{{ place.name }} {{ place.coordinates.longitude }} {{ place.coordinates.longitude}}</p>
+</div>

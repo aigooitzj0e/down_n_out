@@ -22,12 +22,8 @@ export class GoogleMapsComponent implements OnInit {
     location: "",
   }
 
-  //YELP data
-  yelpp = {
-    name: "",
-    lat: "",
-    lng: ""
-  }
+  //YELP DATA
+  yList:object[] = [];
 
   constructor(private _googleService: GoogleService) { }
 
@@ -35,6 +31,7 @@ export class GoogleMapsComponent implements OnInit {
     this.getLocation();
   }
 
+  //GEOLOCATION
   getLocation() {
     navigator.geolocation.getCurrentPosition((position)=> {
         this.lat = position.coords.latitude;
@@ -45,14 +42,18 @@ export class GoogleMapsComponent implements OnInit {
     })
   }
 
+  //YELP SEARCH
   onSearch() {
     console.log('onSearch()', this.newSearch);
     this._googleService.search(this.newSearch)
     .then((data)=> {
       console.log(data);
-      this.yelpp.name = data.name;
-      this.yelpp.lat = data.coordinates.latitude;
-      this.yelpp.lng = data.coordinates.longitude;
+      var newMarker = [];
+      for(var i = 0; i < data.jsonBody.businesses.length; i++) {
+        this.yList.push(data.jsonBody.businesses[i]);
+      }
+
+
     })
   }
 
