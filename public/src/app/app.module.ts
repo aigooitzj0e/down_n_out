@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { GoogleService } from './google.service';
 
 import { AppComponent } from './app.component';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
@@ -20,7 +21,7 @@ import { GoogleMapsComponent } from './google-maps/google-maps.component';
       apiKey: 'AIzaSyAxAh9XAJJr_qDteIBpJt50ODd1Ojw0qIo'
     })
   ],
-  providers: [],
+  providers: [GoogleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

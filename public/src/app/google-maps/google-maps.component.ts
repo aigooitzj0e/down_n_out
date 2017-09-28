@@ -19,14 +19,20 @@ export class GoogleMapsComponent implements OnInit {
   // SEARCH
   newSearch: object = {
     category: "",
-    location: ""
+    location: "",
   }
 
+  //YELP data
+  yelpp = {
+    name: "",
+    lat: "",
+    lng: ""
+  }
 
-  constructor() { }
+  constructor(private _googleService: GoogleService) { }
 
   ngOnInit() {
-    this.getLocation()
+    this.getLocation();
   }
 
   getLocation() {
@@ -41,7 +47,13 @@ export class GoogleMapsComponent implements OnInit {
 
   onSearch() {
     console.log('onSearch()', this.newSearch);
-
+    this._googleService.search(this.newSearch)
+    .then((data)=> {
+      console.log(data);
+      this.yelpp.name = data.name;
+      this.yelpp.lat = data.coordinates.latitude;
+      this.yelpp.lng = data.coordinates.longitude;
+    })
   }
 
 
