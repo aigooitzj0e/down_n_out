@@ -11,14 +11,14 @@ agm-map {
   height: 100%;
   width: 100%;
 }
-button a{
+/*button a{
 	font-family: 'Roboto Condensed', sans-serif;
 	letter-spacing: 2px;
 	text-decoration: none;
 	color: black;
 	transition: all 100ms linear;
 	font-size: 1.5em;
-}
+}*/
 /*button a:hover{
 	font-family: 'Roboto Condensed', sans-serif;
 	letter-spacing: 2px;
@@ -35,7 +35,7 @@ button a:active{
 	transition: all 100ms linear;
 	font-size: 1.5em;
 }*/
-button{
+/*button{
 	padding: 10px 15px;
 	margin-bottom: 10px;
 	border-radius: 10px;
@@ -45,4 +45,4 @@ button{
 }
 .button{
 	text-align: center;
-}
+}*/

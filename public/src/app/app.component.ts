@@ -17,7 +17,7 @@ import { trigger,state,style,animate,transition, query} from '@angular/animation
           {optional:true}),
         // move page off screen right on leave
         query(':leave',
-          animate('1s',
+          animate('6s',
             style({
               position: 'fixed',
               width:'100%',
@@ -27,7 +27,7 @@ import { trigger,state,style,animate,transition, query} from '@angular/animation
         {optional:true}),
         // move page in screen from left to right
         query(':enter',
-          animate('1s',
+          animate('6s',
             style({
 							position: 'fixed',
 							width:'100%',
