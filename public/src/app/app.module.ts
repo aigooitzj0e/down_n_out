@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { GoogleService } from './google.service';
+
 
 import { AppRoutingModule } from './app-routing.module';
 
