@@ -1,8 +1,8 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<img class="image" src="./../assets/dnoLogo.png" alt="abe lincoln">
 <div class="titlediv">
-	<p id="title">DOWN - N - OUT</p>
-	<button *ngIf="!HomeRoute()" type="button" name="button"><a [routerLink]="['map']">BROKE NOT BROKEN</a></button>
-	<button *ngIf="HomeRoute()" type="button" name="button"><a [routerLink]="['front']">HOME</a></button>
+	<p class="fullname">DOWN NOT OUT</p>
 </div>
-
-<router-outlet></router-outlet>
+<div id="container" [@routerAnimation]="getRouteAnimation(route)">
+	<router-outlet #route="outlet"></router-outlet>
+</div>
